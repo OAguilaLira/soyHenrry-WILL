@@ -17,13 +17,22 @@ function filtrar(funcion) {
   // }, {
   //   price: 50,
   //   name: 'phone'
-  // }, {
+  // }, { 
   //   price: 30,
   //   name: 'lamp'
   // }]
   // productos.filtrar(function(p) {
   //   return p.price >= 50;
   // }) => [{price: 100, name:'tv'}]
+  Array.prototype.filtrar = function (funcion) {
+    let lista = [];
+    for (let i = 0; i < this.length; i++){
+      if (funcion(this[i])) {
+        lista.push(this[i]);
+      }
+    }
+    return lista;
+  }
 
 };
 

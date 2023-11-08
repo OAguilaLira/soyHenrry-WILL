@@ -13,7 +13,23 @@ function numeroSimetrico(num) {
   // numeroSimetrico(11711) devuelve true
 
   // Tu código:
+  let normal = [], reves = [], numero = num, sonIguales = true;
 
+  // Transforma el número ingresado en dos arrays, uno en el mismo orden y el otro en orden inverso
+  while(numero > 0){
+    normal.push(numero % 10);
+    reves.unshift(numero % 10);
+    numero = ~~(numero / 10);
+  }
+
+  // Revisar si ambos array son iguales
+  for (let i = 0, j = normal.length - 1; i < normal.length; i++,j--){
+    if (normal[i] !== reves[i]){
+      sonIguales = false
+      break;
+    }
+  }
+  return sonIguales;
 }
 
 // No modifiques nada debajo de esta linea //
